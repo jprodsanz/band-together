@@ -15,12 +15,14 @@
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 </head>
 <body>
-<h1 class="title">
-    Hello, <c:out value="${user.username}"></c:out>
-</h1>
-<p>
-    <a href="/logout">Logout</a>
-</p>
+<div class="container">
+    <h1 class="text-center">
+        Hello, <c:out value="${user.username}"></c:out>
+    </h1>
+    <p>
+        <a href="/logout">Logout</a>
+    </p>
+</div>
 </body>
 <!-- For any Bootstrap that uses JS -->
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>

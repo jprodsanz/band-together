@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 public class MainController {
@@ -60,7 +61,17 @@ public class MainController {
 
     @GetMapping("/dashboard")
     public String dashboard(Model model, HttpSession session) {
-        return "dashboard.jsp";
+        Long id = (Long) session.getAttribute("useId");
+        if (id==null) {
+            return "redirect:/";
+        }
+        else {
+            List<User> allUsers = userServ.getAll();
+            User loggedUser = userServ.findById(id);
+            model.addAttribute("user", loggedUser);
+            model.addAttribute("allUsers", allUsers);
+            return "dashboard.jsp";
+        }
     }
 
 }
