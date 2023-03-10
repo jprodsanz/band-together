@@ -61,15 +61,15 @@ public class MainController {
 
     @GetMapping("/dashboard")
     public String dashboard(Model model, HttpSession session) {
-        Long id = (Long) session.getAttribute("useId");
+        Long id = (Long) session.getAttribute("userId");
         if (id==null) {
             return "redirect:/";
         }
         else {
             List<User> allUsers = userServ.getAll();
-            User loggedUser = userServ.findById(id);
-            model.addAttribute("user", loggedUser);
-            model.addAttribute("allUsers", allUsers);
+                User loggedUser = userServ.findById(id);
+                model.addAttribute("user", loggedUser);
+                model.addAttribute("allUsers", allUsers);
             return "dashboard.jsp";
         }
     }
