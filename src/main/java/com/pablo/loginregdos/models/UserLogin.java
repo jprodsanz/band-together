@@ -2,16 +2,17 @@ package com.pablo.loginregdos.models;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 public class UserLogin {
-    @NotBlank
+    @NotEmpty (message="Required")
     @Email(message="Invalid email address")
         private String email;
 
-    @NotBlank // don't give the min away
+    @NotEmpty (message="Required")
         private String password;
 
-    public UserLogin() {};
+    public UserLogin() {}
 
     public String getEmail() {
         return email;

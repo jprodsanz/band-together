@@ -3,6 +3,7 @@ package com.pablo.loginregdos.services;
 import com.pablo.loginregdos.models.User;
 import com.pablo.loginregdos.models.UserLogin;
 import com.pablo.loginregdos.repositories.UserRepository;
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
@@ -16,11 +17,13 @@ public class UserService {
 
     public User register(User u, BindingResult result) {
         if (!u.getConfirmPass().equals(u.getPassword())){
-            result.rejectValue("confirmPasss", null, "Passwords do not match");
+            result.rejectValue("confirmPass", null, "Passwords do not match");
         }
         if (result.hasErrors()){
             return null;
         }
+        String hashPW = BCrypt.hashpw(u.getPassword(), BCrypt.gensalt());
+        u.setPassword(hashPW);
         return userRepo.save(u);
     }
     public User login(UserLogin l, BindingResult result) {
@@ -29,7 +32,7 @@ public class UserService {
             return null;
         }
         User user = optUser.get();
-        if (user.getPassword().equals(l.getPassword())) {
+        if (!BCrypt.checkpw(l.getPassword(),user.getPassword())) {
             return null;
         }
         return user;

@@ -17,12 +17,20 @@ import javax.validation.Valid;
 public class MainController {
     @Autowired
     private UserService userServ;
+
     @GetMapping("/")
     public String index(Model model ) {
         model.addAttribute("user", new User());
         model.addAttribute("userLogin", new UserLogin());
         return "index.jsp";
     }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.setAttribute("userId", null);
+        return "redirect:/";
+    }
+
     @PostMapping("/register")
     public String register(@Valid @ModelAttribute("user") User user, BindingResult result, Model model, HttpSession session) {
         // run reg method
@@ -54,9 +62,5 @@ public class MainController {
     public String dashboard(Model model, HttpSession session) {
         return "dashboard.jsp";
     }
-    @GetMapping("/logout")
-    public String logout(HttpSession sesssion) {
-        sesssion.setAttribute("userId", null);
-        return "redirect:/";
-    }
+
 }

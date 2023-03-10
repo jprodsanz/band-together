@@ -5,6 +5,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
@@ -16,14 +17,15 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
-    @Size(min=4, message="Username must be four characters long")
+    @NotEmpty (message="Username is required")
+    @Size(min=3, max=30, message="Username must be three characters long")
     private String username;
-    @NotBlank
+
+    @NotEmpty (message = "Email is required")
     @Email(message="That's not a valid email ")
     private String email;
 
-    @NotBlank
+    @NotEmpty (message="password required!")
     @Size(min=8, message="Password must be at least eight characters")
     private String password;
 
@@ -36,7 +38,7 @@ public class User {
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
 
-    public User() {};
+    public User() {}
 
     public Long getId() {
         return id;
