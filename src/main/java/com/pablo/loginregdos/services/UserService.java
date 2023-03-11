@@ -18,6 +18,9 @@ public class UserService {
 
     public User register(User u, BindingResult result) {
         if (!u.getConfirmPass().equals(u.getPassword())){
+            result.rejectValue("email", "Matches", "Email is already taken ");
+        }
+        if (!u.getConfirmPass().equals(u.getPassword())){
             result.rejectValue("confirmPass", null, "Passwords do not match");
         }
         if (result.hasErrors()){
@@ -30,10 +33,12 @@ public class UserService {
     public User login(UserLogin l, BindingResult result) {
         Optional<User> optUser = userRepo.findByEmail(l.getEmail());
         if (optUser.isEmpty()) {
+            result.rejectValue("email", "Matches", "User not found");
             return null;
         }
         User user = optUser.get();
         if (!BCrypt.checkpw(l.getPassword(),user.getPassword())) {
+            result.rejectValue("password", "Matches", "Invalid Password" );
             return null;
         }
         return user;
