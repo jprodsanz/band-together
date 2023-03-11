@@ -9,7 +9,7 @@ public class UserLogin {
     @Email(message="Invalid email address")
         private String email;
 
-    @NotEmpty (message="Please enter your passsword")
+    @NotEmpty (message="Please enter your password")
         private String password;
 
     public UserLogin() {}

@@ -30,9 +30,9 @@
     </div>
     <button type="submit" class="btn btn-outline-primary">Login</button>
     </form:form>
-        <div class="border-top pt-3">
+        <div>
             <small class="text-muted">
-                Need An Account? <a class="ml-2" href="/register">Sign Up Now</a>
+                Need An Account? <a class="ml-2" href="/register">Sign Up</a>
             </small>
         </div>
     </body>

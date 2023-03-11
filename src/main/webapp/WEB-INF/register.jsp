@@ -39,12 +39,12 @@
         </div>
         <button type="submit" class="btn btn-outline-primary">Register</button>
     </form:form>
-    <di>
+    <div>
         <small class="text-muted ">
             Already have an account?
             <a class="ml-2"href="/login">Login</a>
         </small>
-    </di>
+    </div>
 </div>
 </body>
 <!-- For any Bootstrap that uses JS -->

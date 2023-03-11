@@ -57,7 +57,7 @@ public class MainController {
             User newUser = userServ.register(user, result);
             if(newUser == null) {
                 model.addAttribute("userLogin", new UserLogin());
-                return "login.jsp";
+                return "register.jsp";
             }
             // add user to DB
             // log user in
