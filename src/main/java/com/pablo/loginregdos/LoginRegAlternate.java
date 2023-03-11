@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LoginRegDosApplication {
+public class LoginRegAlternate {
 
     public static void main(String[] args) {
-        SpringApplication.run(LoginRegDosApplication.class, args);
+        SpringApplication.run(LoginRegAlternate.class, args);
     }
 
 }

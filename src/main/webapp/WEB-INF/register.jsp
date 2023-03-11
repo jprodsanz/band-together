@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 </head>
 <body>
-<h1 class="display-1 text-center" >Login and Register</h1>
+<h1 class="display-1 text-center" >Sign up </h1>
 <div class="container">
     <form:form action="/register" method="POST" modelAttribute="user">
         <div class="mb-3">

@@ -5,11 +5,11 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 
 public class UserLogin {
-    @NotEmpty (message="Required")
+    @NotEmpty (message="Your email is required")
     @Email(message="Invalid email address")
         private String email;
 
-    @NotEmpty (message="Required")
+    @NotEmpty (message="Please enter your passsword")
         private String password;
 
     public UserLogin() {}
