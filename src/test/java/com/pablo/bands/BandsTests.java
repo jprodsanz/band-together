@@ -1,10 +1,10 @@
-package com.pablo.loginregdos;
+package com.pablo.bands;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LoginRegAlternateTests {
+class BandsTests {
 
     @Test
     void contextLoads() {

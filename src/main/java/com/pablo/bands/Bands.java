@@ -1,13 +1,13 @@
-package com.pablo.loginregdos;
+package com.pablo.bands;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LoginRegAlternate {
+public class Bands {
 
     public static void main(String[] args) {
-        SpringApplication.run(LoginRegAlternate.class, args);
+        SpringApplication.run(Bands.class, args);
     }
 
 }

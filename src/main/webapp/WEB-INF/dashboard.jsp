@@ -17,6 +17,7 @@
 <body>
 <div class="container">
     <h1 class="text-center"> Dashboard</h1>
+    <h3 class="text-danger"> <c:out value="${error}"/></h3>
         <p>
             <a href="/logout" class="btn btn-outline-primary">Logout</a>
         </p>

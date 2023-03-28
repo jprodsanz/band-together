@@ -15,9 +15,10 @@
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 </head>
 <body>
-<h1 class="display-1 text-center" >Book Club</h1>
 <div class="container">
-    <form:form action="/login" method="POST" modelAttribute="userLogin">
+    <h1 class="display-1 text-center" >Bands</h1>
+    <h3 class="text-danger"> <c:out value="${error}"/></h3>
+    <form:form action="/user/login" method="POST" modelAttribute="loginUser">
     <div class="mb-3">
         <form:label for="email" class="form-label" path="email">Email:</form:label>
         <form:input style="width:250px;" type="email" class="form-control" id="email" aria-describedby="email" path="email"/>
@@ -32,7 +33,7 @@
     </form:form>
         <div>
             <small class="text-muted">
-                Need An Account? <a class="ml-2" href="/register">Sign Up</a>
+                Need An Account? <a class="ml-2" href="/user/register">Sign Up</a>
             </small>
         </div>
     </body>

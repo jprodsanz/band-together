@@ -9,14 +9,14 @@
 <%@ page isErrorPage="true" %>
 <html>
 <head>
-    <title>Login</title>
+    <title>Register</title>
     <%--    Bootstrap--%>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 </head>
 <body>
 <h1 class="display-1 text-center" >Sign up </h1>
 <div class="container">
-    <form:form action="/register" method="POST" modelAttribute="user">
+    <form:form action="/user/register" method="POST" modelAttribute="user">
         <div class="mb-3">
             <form:label for="username" class="form-label" path="username">Username:</form:label>
             <form:input style="width:250px;" type="text" class="form-control" id="username" aria-describedby="username" path="username"/>
@@ -42,7 +42,7 @@
     <div>
         <small class="text-muted ">
             Already have an account?
-            <a class="ml-2"href="/login">Login</a>
+            <a class="ml-2"href="/user/login">Login</a>
         </small>
     </div>
 </div>

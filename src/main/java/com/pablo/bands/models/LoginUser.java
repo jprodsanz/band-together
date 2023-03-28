@@ -1,18 +1,19 @@
-package com.pablo.loginregdos.models;
+package com.pablo.bands.models;
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 
-public class UserLogin {
-    @NotEmpty (message="Your email is required")
-    @Email(message="Invalid email address")
-        private String email;
 
-    @NotEmpty (message="Please enter your password")
-        private String password;
+public class LoginUser {
 
-    public UserLogin() {}
+    @NotEmpty(message="Your email is required")
+    @Email(message="Please enter a valid email!")
+    private String email;
+
+    @NotEmpty(message="Your password is required")
+    private String password;
+
+    public LoginUser() {}
 
     public String getEmail() {
         return email;
